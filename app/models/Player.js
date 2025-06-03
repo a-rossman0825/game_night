@@ -20,7 +20,7 @@ export class Player {
     console.log(`hello my name is ${this.name}`);
   }
 
-  playerCardHTMLTemplate() {
+  get playerCardHTMLTemplate() {
     return `
       <div class="card col-md-9 col-lg-5" style="background-color: ${this.color}">
           <div class="row card-body justify-content-between align-items-center">
@@ -31,7 +31,7 @@ export class Player {
             <button class="col-1 buttons rounded-circle" onclick="app.PlayersController.raiseScore('${this.name}')">+</button>
           </div>
         </div>
-    `
+    `;
   }
 
 }

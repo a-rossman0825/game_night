@@ -42,7 +42,7 @@ export class PlayersController {
     const playerCardElm = document.getElementById('player-cards');
     let playerCardContent = '';
     const players = AppState.players.sort((a, b) => b.score - a.score);
-    players.forEach((player) => playerCardContent += player.playerCardHTMLTemplate());
+    players.forEach((player) => playerCardContent += player.playerCardHTMLTemplate);
     playerCardElm.innerHTML = playerCardContent;
   }
 }
