@@ -1,3 +1,4 @@
+import { PlayersController } from "../controllers/PlayersController.js";
 
 
 export class Player {
@@ -27,4 +28,5 @@ export class Player {
         </div>
     `
   }
+
 }
