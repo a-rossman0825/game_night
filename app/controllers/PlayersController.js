@@ -1,27 +1,27 @@
 import { AppState } from "../AppState.js";
 import { playersService } from "../services/PlayersService.js";
 
-
 export class PlayersController {
   constructor() {
-    console.log('Players Controller is loaded!');
+    console.log('Players Loaded!', AppState.players);
+    this.drawPlayers();
   }
 
+  lowerScore(name) {
+    console.log(`decreasing score ${name}`);
+    playersService.lowerScore(name);
+  }
+
+  raiseScore(name) {
+    console.log(`raising score ${name}`);
+    playersService.raiseScore(name);
+  }
+  
   drawPlayers() {
+    const playerCardElm = document.getElementById('player-cards');
+    let playerCardContent = '';
     const players = AppState.players;
-    const playerCardsElm = document.getElementById('player-cards');
-    let playersContent = '';
-    players.forEach(player => playersContent += player.playerCardHTMLTemplate());
-    playerCardsElm.innerHTML = playersContent;
-  }
-
-  raiseScore(playerName) {
-    playersService.decreaseScore(playerName);
-    this.drawPlayers();
-  }
-
-  lowerScore(playerName) {
-    playersService.increaseScore(playerName);
-    this.drawPlayers();
+    players.forEach((player) => playerCardContent += player.playerCardHTMLTemplate());
+    playerCardElm.innerHTML = playerCardContent;
   }
 }

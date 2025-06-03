@@ -16,3 +16,45 @@ main {
   justify-content: start;
   align-items: end;
 }
+
+.title-text {
+  color: rgb(255, 255, 13);
+  font-size: 3em;
+  font-family: "VT323", monospace;
+}
+
+.add-player-text {
+  color: rgb(255, 255, 13);
+  font-family: "VT323", monospace;
+}
+
+.card-text {
+  font-size: 20px;
+  color: rgb(239, 200, 103);
+}
+
+.buttons {
+  background-color: rgb(239, 200, 103);
+}
+
+.number-text {
+  color: seashell;
+  font-size: 20px;
+}
+
+.card {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid rgb(239, 200, 103) !important;
+}
+
+@keyframes glow {
+  0% { text-shadow: 0 0 5px #66fcf1; }
+  50% {text-shadow: 0 0 15px #66fcf1; }
+  100% { text-shadow: 0 0 5px #66fcf1; }
+}
+
+.glowing {
+  animation: glow 2s infinite ease-in-out;
+}

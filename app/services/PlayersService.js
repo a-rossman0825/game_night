@@ -1,24 +1,21 @@
 import { AppState } from "../AppState.js";
 
 
+
 class PlayersService {
-
-  decreaseScore(name) {
-    const players = AppState.players;
-    const foundPlayer = players.find(player => player.name == name);
-    foundPlayer.score--;
-    console.log('decreasing score', foundPlayer.score);
-    if (foundPlayer.score <= 0) {
-      foundPlayer.score = 0;
-    }
+  lowerScore(name){
+    console.log('service', name);
+    const targetPlayer = AppState.players.find(player => player.name == name);
+    targetPlayer.score--;
+    console.log(targetPlayer.name, targetPlayer.score);
   }
-
-  increaseScore(name) {
-    const players = AppState.players;
-    const foundPlayer = players.find(player => player.name == name);
-    foundPlayer.score++;
-    console.log('increasing score', foundPlayer.score);
+  raiseScore(name){
+    console.log('service', name);
+    const targetPlayer = AppState.players.find(player => player.name == name);
+    targetPlayer.score++;
+    console.log(targetPlayer.name, targetPlayer.score);
   }
 }
+
 
 export const playersService = new PlayersService();
