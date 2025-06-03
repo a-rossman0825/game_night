@@ -1,4 +1,5 @@
 import { AppState } from "../AppState.js";
+import { Player } from "../models/Player.js";
 import { playersService } from "../services/PlayersService.js";
 
 export class PlayersController {
@@ -17,6 +18,24 @@ export class PlayersController {
     console.log(`raising score ${name}`);
     playersService.raiseScore(name);
     this.drawPlayers();
+  }
+
+  addPlayer(event) {
+    event.preventDefault();
+
+    let form = event.target;
+    let name = form.playerName.value;
+    let picture = form.playerPicture.value;
+    let color = form.playerColor.value
+
+    if (name == undefined) return;
+
+    const newPlayer = new Player(name, picture, color);
+    AppState.players.push(newPlayer);
+
+    this.drawPlayers();
+
+    form.reset();
   }
   
   drawPlayers() {

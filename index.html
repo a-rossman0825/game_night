@@ -37,7 +37,7 @@
     <section class="container mt-4">
       <div class="row">
         <div class="fs-1 add-player-text"><i class="mdi mdi-numeric-positive-1"></i> Add Player</div>
-        <form onsubmit="app.playersController.addPlayer(playerName, playerPicture)">
+        <form onsubmit="app.PlayersController.addPlayer(event)">
           <div class="mb-3 col-md-5 mt-3">
             <input
               type="text"
@@ -56,6 +56,17 @@
           </div>
         </div>
         <div class="col-md-5">
+        <select class="form-select" name="playerColor" aria-label="Default select example">
+          <option selected disabled>What's your favorite color?</option>
+          <option value="blue">Blue</option>
+          <option value="red">Red</option>
+          <option value="pink">Pink</option>
+          <option value="purple">Purple</option>
+          <option value="darkorange">Orange</option>
+          <option value="green">Green</option>
+        </select>
+        </div>
+        <div class="col-md-5 mt-3">
           <div class="row justify-content-end">
             <button class="col-2 buttons rounded me-3" type="submit">Submit</button>
           </div>
